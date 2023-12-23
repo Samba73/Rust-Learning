@@ -14,7 +14,8 @@ struct EmployeeDetails {
     mobile: String,
     email: String,
 }
-
+// this function need to be rewritten to read all the lines and construct struct for each line of record.
+// currently it only read / fetches first line of record
 fn read_employee_details() -> io::Result<EmployeeDetails>
     {
         let file = OpenOptions::new()
