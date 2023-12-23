@@ -46,12 +46,22 @@ fn main() {
 
     let emp_1 = Employee::new(&String::from("Samba"),
                                &String::from("Krish"),
-                               &String::from("10-Jul-1983"),
+                               &String::from("10-Jul-1973"),
                                &String::from("IT"),
                                &String::from("9999999"), 
                                &String::from("samba@gmail.com"));
 
     emp_1.add();
-    emp_1.display_employee();                           
+    emp_1.display_employee();   
+
+    let emp_2 = Employee::new("Raghu",
+                               "Krishnamurthy",
+                               "01-01-1985",
+                               "Sales",
+                               "111111", 
+                               "raghu.k@gmail.com");
+
+    emp_2.add();
+    emp_2.display_employee();                           
 
 }
