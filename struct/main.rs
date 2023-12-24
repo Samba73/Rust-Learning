@@ -16,6 +16,8 @@ struct EmployeeDetails {
 }
 // this function need to be rewritten to read all the lines and construct struct for each line of record.
 // currently it only read / fetches first line of record
+
+
 fn read_employee_details() -> io::Result<EmployeeDetails>
     {
         let file = OpenOptions::new()
@@ -28,7 +30,19 @@ fn read_employee_details() -> io::Result<EmployeeDetails>
 
 
                 let mut details = EmployeeDetails::default();
-
+                // following idea can be implemented but this also involve expensive creation of collection. need better solution
+                //let mut lines = contents.lines();
+                //while Some(line) = lines.next() {
+                    //let fields: Vec<&str> = line.split_whitespace().collect();
+                        //details.first_name = fields[0].to_string();
+                        //details.last_name = fields[1].to_string();
+                        //details.dob = fields[2].to_string();
+                        //details.dept = fields[3].to_string();
+                        //details.mobile = fields[4].to_string();
+                        //details.email = fields[5].to_string();
+                        // send back the details struct so it can take the next line, else the struct will be overwritten for last line?
+                //}
+                // in the above commented code, all the lines are read into emp_vec
                 let fields: Vec<&str> = contents.split_whitespace().collect();
 
                 details.first_name = fields[0].to_string();
