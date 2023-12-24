@@ -30,7 +30,8 @@ fn read_employee_details() -> io::Result<EmployeeDetails>
 
 
                 let mut details = EmployeeDetails::default();
-                // following idea can be implemented but this also involve expensive creation of collection. need better solution
+                // following ideas can be implemented but this also involve expensive creation of collection. need better solution
+               ////********* option 1
                 //let mut lines = contents.lines();
                 //while Some(line) = lines.next() {
                     //let fields: Vec<&str> = line.split_whitespace().collect();
@@ -43,6 +44,43 @@ fn read_employee_details() -> io::Result<EmployeeDetails>
                         // send back the details struct so it can take the next line, else the struct will be overwritten for last line?
                 //}
                 // in the above commented code, all the lines are read into emp_vec
+                /////******** end option 1
+                ////********* option 2
+
+                        // let mut details = EmployeeDetails::default();
+                        // let mut all_details: Vec<EmployeeDetails> = Vec::new();
+                        // let mut field_count:u32 = 0;
+                        // let mut field = String::new();
+                        
+                        // for c in contents.chars() {
+                        //     match c {
+                        //         '\t' => {
+                        //             match field_count {
+                        //                 0 => details.first_name = field.trim().to_string(),
+                        //                 1 => details.last_name = field.trim().to_string(),
+                        //                 2 => details.dob = field.trim().to_string(),
+                        //                 3 => details.dept = field.trim().to_string(),
+                        //                 4 => details.mobile = field.trim().to_string(),
+                        //                 _ => details.email = field.trim().to_string(),
+                        //             }
+                        //             field.clear();
+                        //             field_count+=1;
+                        //         }
+                        //         '\n' => {
+                        //             details.email = field.trim().to_string();
+                        //             all_details.push(details);
+                        //             details = EmployeeDetails::default();
+                        //             field_count = 0;
+                        //             field.clear();
+                        //         }
+                        //         _ => {
+                        //             field.push(c);
+                        //         }
+                        //     }
+                        // }
+                        // send all_details vector (this vector will be of type EmployeeDetails
+                        // in this case the fn return will be a vector and no Result
+                ////******* end option 2
                 let fields: Vec<&str> = contents.split_whitespace().collect();
 
                 details.first_name = fields[0].to_string();
