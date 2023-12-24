@@ -150,7 +150,7 @@ fn main() {
 
     let emp_1 = Employee::new(&String::from("Sambasivam"),
                                &String::from("Krishnamurthy"),
-                               &String::from("10-Jul-1973"),
+                               &String::from("10-Jul-1977"),
                                &String::from("IT"),
                                &String::from("9999999"), 
                                &String::from("samba@gmail.com"));
